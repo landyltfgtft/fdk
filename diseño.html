@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Diseño de Base de Datos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li onclick="mostrarAlerta('Conceptos básicos')">Conceptos básicos</li>
+      <li onclick="mostrarAlerta('Restricciones')">Restricciones</li>
+      <li onclick="mostrarAlerta('Foreign key')">Foreign key</li>
+      <li onclick="mostrarAlerta('Select from')">Select from</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Diseño de Base de Datos</h1>
+    <p class="intro">
+      El diseño de bases de datos es el proceso de crear la estructura lógica y física que permitirá
+      almacenar, organizar y gestionar la información de manera eficiente, evitando redundancia y
+      asegurando la integridad de los datos.
+    </p>
+
+    <table class="tabla-info">
+      <tr>
+        <th>Objetivos</th>
+        <th>Etapas del diseño</th>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            <li>Organizar la información de forma lógica.</li>
+            <li>Minimizar la redundancia de datos.</li>
+            <li>Garantizar la integridad y consistencia.</li>
+            <li>Facilitar el acceso y la seguridad.</li>
+            <li>Optimizar el rendimiento del sistema.</li>
+          </ul>
+        </td>
+        <td>
+          <ol>
+            <li><strong>Recolección de requisitos:</strong> identificar necesidades de información.</li>
+            <li><strong>Diseño conceptual:</strong> definir el modelo entidad–relación (ER).</li>
+            <li><strong>Diseño lógico:</strong> transformar el modelo conceptual en relacional.</li>
+            <li><strong>Diseño físico:</strong> definir estructuras físicas como tablas e índices.</li>
+          </ol>
+        </td>
+      </tr>
+    </table>
+
+    <h2>Modelo Entidad–Relación (ER)</h2>
+    <p>Representa los datos mediante entidades, atributos y relaciones entre ellas.</p>
+    <ul>
+      <li><strong>PK:</strong> Clave primaria</li>
+      <li><strong>1:</strong> Uno</li>
+      <li><strong>N:</strong> Muchos</li>
+    </ul>
+
+    <h2>Normalización</h2>
+    <table class="tabla-normalizacion">
+      <tr><th>Nivel</th><th>Descripción</th></tr>
+      <tr><td>1FN</td><td>Atributos atómicos, sin grupos repetitivos.</td></tr>
+      <tr><td>2FN</td><td>Elimina dependencias parciales.</td></tr>
+      <tr><td>3FN</td><td>Elimina dependencias transitivas.</td></tr>
+    </table>
+    <p>Una base de datos normalizada es más eficiente, flexible y fácil de mantener.</p>
+
+    <h2>Claves</h2>
+    <ul>
+      <li><strong>Clave primaria:</strong> identifica de manera única cada registro.</li>
+      <li><strong>Clave foránea:</strong> establece la relación entre tablas.</li>
+      <li><strong>Clave candidata:</strong> puede ser clave primaria si se elige.</li>
+    </ul>
+
+    <h2>Buenas prácticas</h2>
+    <ul>
+      <li>Usar nombres claros y consistentes.</li>
+      <li>Definir claves primarias en todas las tablas.</li>
+      <li>Evitar campos repetidos e innecesarios.</li>
+      <li>Implementar restricciones de integridad.</li>
+      <li>Realizar copias de seguridad periódicas.</li>
+    </ul>
+
+    <h2>Herramientas populares</h2>
+    <p>MySQL, PostgreSQL, SQL Server, Oracle, SQLite.</p>
+
+    <h2>Importancia</h2>
+    <p>
+      Un buen diseño de base de datos es la base de cualquier sistema confiable.
+      Permite tomar mejores decisiones, escalar aplicaciones y proteger la información.
+    </p>
+
+    <img src="diseñp.jpeg" alt="Infografía diseño de base de datos" class="infografia">
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordenar Registros con ORDER BY</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones</a></li>
+      <li><a href="insertar.html">Insertar registros</a></li>
+      <li><a href="eliminar.html">Eliminar registros</a></li>
+      <li><a href="actualizar.html">Actualizar registros</a></li>
+      <li><a href="select.html">Select from</a></li>
+      <li><a href="operadores.html">Operadores</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Ordenar Registros con ORDER BY</h1>
+    <p class="intro">
+      La cláusula <strong>ORDER BY</strong> se utiliza para ordenar los resultados de una consulta SQL según una o más columnas.  
+      Permite organizar los datos de forma ascendente (<strong>ASC</strong>) o descendente (<strong>DESC</strong>), facilitando su lectura y análisis.
+    </p>
+
+    <h2>Sintaxis básica</h2>
+    <pre><code>SELECT columnas FROM nombre_tabla  
+ORDER BY columna [ASC | DESC];</code></pre>
+    <p>Por defecto, si no se especifica la dirección, el orden será <strong>ASC</strong> (ascendente).</p>
+
+    <h2>Ejemplo 1: Ordenar con LIKE</h2>
+    <p>Consulta los nombres que comienzan con “A” y ordénalos alfabéticamente.</p>
+    <pre><code>SELECT nombre FROM alumnos  
+WHERE nombre LIKE 'A%'  
+ORDER BY nombre ASC;</code></pre>
+
+    <h2>Ejemplo 2: Ordenar con IN</h2>
+    <p>Consulta los alumnos de los municipios “Toluca” y “Pachuca”, ordenados por municipio.</p>
+    <pre><code>SELECT nombre, municipio FROM alumnos  
+WHERE municipio IN ('Toluca','Pachuca')  
+ORDER BY municipio;</code></pre>
+
+    <h2>Ejemplo 3: Ordenar con NOT</h2>
+    <p>Consulta los alumnos que no son de Tecámac y ordénalos por edad descendente.</p>
+    <pre><code>SELECT nombre, edad FROM alumnos  
+WHERE NOT municipio = 'Tecamac'  
+ORDER BY edad DESC;</code></pre>
+
+    <h2>Ejemplo práctico en MySQL</h2>
+    <p>En este ejemplo se muestran consultas con <strong>ORDER BY</strong> combinado con operadores <strong>LIKE</strong>, <strong>IN</strong> y <strong>NOT</strong>:</p>
+    <img src="h.png" alt="Ejemplo de consultas con ORDER BY en MySQL" class="infografia">
+
+    <h2>Infografía general</h2>
+    <img src="o.png" alt="Infografía sobre ORDER BY en SQL" class="infografia">
+
+    <h2>Recomendaciones</h2>
+    <ul>
+      <li>Usa <strong>ASC</strong> para ordenar de menor a mayor o de A a Z.</li>
+      <li>Usa <strong>DESC</strong> para ordenar de mayor a menor o de Z a A.</li>
+      <li>Puedes ordenar por más de una columna separándolas con comas.</li>
+      <li>Combina <strong>ORDER BY</strong> con <strong>WHERE</strong> para filtrar y ordenar simultáneamente.</li>
+      <li>Recuerda que el orden afecta solo la visualización, no los datos almacenados.</li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Conceptos Básicos SQL</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li onclick="mostrarAlerta('Intro a base de datos')">Intro a base de datos</li>
+      <li onclick="mostrarAlerta('Diseño de base de datos')">Diseño de base de datos</li>
+      <li onclick="mostrarAlerta('Restricciones')">Restricciones</li>
+      <li onclick="mostrarAlerta('Insertar registros')">Insertar registros</li>
+      <li onclick="mostrarAlerta('Foreign key')">Foreign key</li>
+      <li onclick="mostrarAlerta('Select from')">Select from</li>
+      <li onclick="mostrarAlerta('Funciones de texto')">Funciones de texto</li>
+      <li onclick="mostrarAlerta('Fechas')">Fechas</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>📘 Conceptos Básicos de Bases de Datos Relacionales</h1>
+    <p>
+      Una <strong>base de datos relacional</strong> organiza la información en tablas con filas y columnas, 
+      permitiendo relacionarlas mediante claves. Este modelo fue propuesto por <strong>Edgar F. Codd</strong> en 1970 
+      y revolucionó la forma de almacenar información.
+    </p>
+
+    <p>
+      Los <strong>Sistemas Gestores de Bases de Datos (SGBD)</strong> permiten crear, administrar y proteger los datos. 
+      Ejemplos populares incluyen <em>MySQL, Oracle, SQL Server y PostgreSQL</em>.
+    </p>
+
+    <p>
+      Las bases de datos relacionales son esenciales en empresas, hospitales, escuelas y aplicaciones web, 
+      ya que garantizan seguridad, organización y eficiencia en el manejo de grandes volúmenes de información.
+    </p>
+
+    <img src="1k.jpeg" alt="Infografía" class="infografia">
+  </div>
+
+  <script>
+    function mostrarAlerta(item) {
+      Swal.fire({
+        title: 'Tema seleccionado',
+        text: 'Has elegido: ' + item,
+        icon: 'info',
+        confirmButtonColor: '#ff3d7e',
+        confirmButtonText: 'Ok'
+      });
+    }
+  </script>
+</body>
+</html>

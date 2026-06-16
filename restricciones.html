@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Restricciones SQL</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li onclick="mostrarAlerta('Foreign key')">Foreign key</li>
+      <li onclick="mostrarAlerta('Select from')">Select from</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Restricciones en SQL</h1>
+    <p class="intro">
+      Las <strong>restricciones</strong> son reglas que se aplican a las columnas de una tabla para garantizar la integridad de los datos.
+      Ayudan a evitar errores comunes como duplicados, valores vacíos o inconsistencias lógicas.
+    </p>
+
+    <table class="tabla-info">
+      <tr>
+        <th>Restricción</th>
+        <th>Icono</th>
+        <th>Función</th>
+        <th>Ejemplo físico</th>
+        <th>Error que previene</th>
+      </tr>
+      <tr>
+        <td><strong>PRIMARY KEY</strong></td>
+        <td>🔑</td>
+        <td>Identificador único</td>
+        <td>CURP / Matrícula</td>
+        <td>Alumnos sin número de lista</td>
+      </tr>
+      <tr>
+        <td><strong>NOT NULL</strong></td>
+        <td>❗</td>
+        <td>Obliga a llenar</td>
+        <td>Asterisco rojo en formulario</td>
+        <td>Nombres en blanco</td>
+      </tr>
+      <tr>
+        <td><strong>UNIQUE</strong></td>
+        <td>🌀</td>
+        <td>Evita repeticiones</td>
+        <td>No compartir celular</td>
+        <td>Correos duplicados</td>
+      </tr>
+      <tr>
+        <td><strong>DEFAULT</strong></td>
+        <td>🕒</td>
+        <td>Asistente de autollenado</td>
+        <td>Sello de reloj checador</td>
+        <td>Fechas faltantes</td>
+      </tr>
+      <tr>
+        <td><strong>CHECK</strong></td>
+        <td>🛡️</td>
+        <td>Filtro lógico</td>
+        <td>Cadenero de seguridad</td>
+        <td>Edades inválidas</td>
+      </tr>
+    </table>
+
+    <h2>Explicación adicional</h2>
+    <ul>
+      <li><strong>PRIMARY KEY:</strong> Define una columna como identificador único. No puede repetirse ni estar vacía.</li>
+      <li><strong>NOT NULL:</strong> Obliga a que el campo tenga un valor, evitando registros incompletos.</li>
+      <li><strong>UNIQUE:</strong> Garantiza que los valores en una columna no se repitan.</li>
+      <li><strong>DEFAULT:</strong> Asigna un valor por defecto cuando no se especifica otro.</li>
+      <li><strong>CHECK:</strong> Verifica que los datos cumplan una condición lógica (por ejemplo, edad > 0).</li>
+    </ul>
+
+    <h2>Importancia</h2>
+    <p>
+      Las restricciones aseguran que los datos sean válidos, coherentes y confiables.
+      Son esenciales para mantener la calidad de la información en cualquier base de datos.
+    </p>
+
+    <img src="restricciones.png" alt="Matriz de restricciones SQL" class="infografia">
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

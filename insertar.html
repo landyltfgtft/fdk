@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Insertar Registros</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones</a></li>
+      <li><a href="modificar.html">Modificar y eliminar</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Insertar Registros en SQL</h1>
+    <p class="intro">
+      En SQL existen varias formas de insertar registros en una tabla.  
+      El comando principal es <strong>INSERT INTO</strong>, y puede usarse de diferentes maneras según la estructura de los datos o la fuente de información.
+    </p>
+
+    <h2>Forma 1: Insertar un solo registro</h2>
+    <p>Se usa para agregar una sola fila de datos a la tabla.</p>
+    <pre><code>INSERT INTO alumnos VALUES ("003","juan","perez",18,"programacion");</code></pre>
+    <img src="r1.png" alt="Ejemplo de inserción simple" class="infografia">
+
+    <h2>Forma 2: Insertar varios registros a la vez</h2>
+    <p>Permite agregar múltiples filas en una sola instrucción.</p>
+    <pre><code>
+INSERT INTO alumnos VALUES
+("004","Ana","Martinez",18,"ventas"),
+("005","Luis","Ramirez",20,"Programacion"),
+("006","Sofia","Torres",19,"maquinas");
+    </code></pre>
+    <img src="r2.png" alt="Ejemplo de inserción múltiple" class="infografia">
+
+    <h2>Forma 3: Insertar especificando columnas</h2>
+    <p>Se usa cuando no se llenan todas las columnas o se desea indicar el orden exacto.</p>
+    <pre><code>
+INSERT INTO alumnos (id_alumno,edad,nombre,carrera,apellido)
+VALUES ("001",7,"diego","programacion","perez");
+    </code></pre>
+    <img src="r3.png" alt="Ejemplo de inserción con columnas" class="infografia">
+
+    <h2>Forma 4: Insertar desde un archivo CSV</h2>
+    <p>
+      Esta forma permite importar datos desde un archivo externo (por ejemplo, creado en Bloc de notas o Excel).  
+      El archivo debe tener formato CSV (valores separados por comas) y guardarse en una ruta accesible por MySQL.
+    </p>
+    <pre><code>
+LOAD DATA INFILE 'C:/xampp/mysql/data/alumnos.csv'
+INTO TABLE alumnos
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+(id_alumno, nombre, apellido, edad, carrera);
+    </code></pre>
+    <p>Antes de ejecutar el comando, asegúrate de que el archivo esté cerrado y tenga los datos correctamente separados por comas.</p>
+
+    <h2>Infografía general</h2>
+    <img src="in.png" alt="Infografía insertar registro" class="infografia">
+
+    <h2>Recomendaciones</h2>
+    <ul>
+      <li>Verifica los tipos de datos antes de insertar (VARCHAR, INT, etc.).</li>
+      <li>Evita duplicar claves primarias.</li>
+      <li>Usa <strong>SELECT * FROM alumnos;</strong> para confirmar los registros insertados.</li>
+      <li>Guarda tus archivos CSV con codificación UTF‑8 para evitar errores de caracteres.</li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

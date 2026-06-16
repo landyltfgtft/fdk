@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Funciones de Texto en SQL</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones</a></li>
+      <li><a href="insertar.html">Insertar registros</a></li>
+      <li><a href="eliminar.html">Eliminar registros</a></li>
+      <li><a href="actualizar.html">Actualizar registros</a></li>
+      <li><a href="select.html">Select from</a></li>
+      <li><a href="operadores.html">Operadores</a></li>
+      <li><a href="orderby.html">Order by</a></li>
+      <li><a href="funciones.html">Funciones numéricas</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Funciones de Texto en SQL</h1>
+    <p class="intro">
+      Las funciones de texto permiten manipular cadenas dentro de una base de datos.  
+      Se usan para medir, unir, limpiar o extraer partes de los textos almacenados en las columnas.
+    </p>
+
+    <h2>Medición de texto</h2>
+    <p>La función <strong>LENGTH()</strong> devuelve la cantidad de caracteres de una cadena.</p>
+    <pre><code>SELECT nombre, LENGTH(nombre) AS longitud  
+FROM alumnos  
+ORDER BY longitud;</code></pre>
+    <p>Resultado: muestra el número de letras de cada nombre.</p>
+
+    <h2>Unión de cadenas</h2>
+    <p>La función <strong>CONCAT()</strong> permite unir dos o más textos en una sola cadena.</p>
+    <pre><code>SELECT CONCAT(nombre, ' - ', municipio) AS alumno_info  
+FROM alumnos  
+ORDER BY alumno_info;</code></pre>
+    <p>Resultado: combina nombre y municipio en una sola columna.</p>
+
+    <h2>Extracción de texto</h2>
+    <p>La función <strong>SUBSTRING()</strong> extrae una parte específica del texto según la posición y longitud indicadas.</p>
+    <pre><code>SELECT SUBSTRING(nombre, 1, 2) AS iniciales  
+FROM alumnos  
+ORDER BY iniciales;</code></pre>
+    <p>Resultado: muestra las dos primeras letras de cada nombre.</p>
+
+    <h2>Ejemplo práctico en MySQL</h2>
+    <p>En este ejemplo se aplican las funciones <strong>LENGTH()</strong>, <strong>CONCAT()</strong> y <strong>SUBSTRING()</strong> para analizar y ordenar datos de texto:</p>
+    <img src="y.png" alt="Ejemplo de funciones de texto en MySQL" class="infografia">
+
+    <h2>Infografía general</h2>
+    <img src="yy.png" alt="Infografía sobre funciones de texto en SQL" class="infografia">
+
+    <h2>Otras funciones útiles</h2>
+    <table class="tabla-info">
+      <tr>
+        <th>Función</th>
+        <th>Descripción</th>
+        <th>Ejemplo SQL</th>
+      </tr>
+      <tr>
+        <td><strong>RTRIM()</strong></td>
+        <td>Elimina los espacios en blanco del final de la cadena.</td>
+        <td><code>SELECT RTRIM(ciudad) FROM alumnos;</code></td>
+      </tr>
+      <tr>
+        <td><strong>LTRIM()</strong></td>
+        <td>Elimina los espacios en blanco del inicio de la cadena.</td>
+        <td><code>SELECT LTRIM(nombre) FROM alumnos;</code></td>
+      </tr>
+      <tr>
+        <td><strong>CONCAT_WS()</strong></td>
+        <td>Une cadenas usando un separador definido.</td>
+        <td><code>SELECT CONCAT_WS('-', nombre, municipio) FROM alumnos;</code></td>
+      </tr>
+    </table>
+
+    <h2>Recomendaciones</h2>
+    <ul>
+      <li>Usa <strong>LENGTH()</strong> para validar la longitud de datos como contraseñas o códigos.</li>
+      <li>Aplica <strong>CONCAT()</strong> para crear textos combinados o etiquetas.</li>
+      <li>Utiliza <strong>SUBSTRING()</strong> para obtener iniciales o partes específicas del texto.</li>
+      <li>Emplea <strong>RTRIM()</strong> y <strong>LTRIM()</strong> para limpiar espacios innecesarios.</li>
+      <li>Combina estas funciones con <strong>ORDER BY</strong> para organizar los resultados.</li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

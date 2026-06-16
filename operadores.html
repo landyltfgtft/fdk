@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Operadores en SQL</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones</a></li>
+      <li><a href="insertar.html">Insertar registros</a></li>
+      <li><a href="eliminar.html">Eliminar registros</a></li>
+      <li><a href="actualizar.html">Actualizar registros</a></li>
+      <li><a href="select.html">Select from</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>⚙️ Operadores en SQL</h1>
+    <p class="intro">
+      Los operadores permiten realizar comparaciones y aplicar condiciones dentro de las consultas SQL.  
+      Se dividen en dos tipos principales: <strong>lógicos</strong> y <strong>especiales</strong>.
+    </p>
+
+    <h2>📘 Operadores lógicos</h2>
+    <table class="tabla-info">
+      <tr>
+        <th>Operador</th>
+        <th>Descripción</th>
+        <th>Ejemplo</th>
+      </tr>
+      <tr>
+        <td><strong>AND</strong></td>
+        <td>Ambas condiciones deben cumplirse.</td>
+        <td><code>SELECT * FROM alumnos WHERE edad > 18 AND promedio >= 9;</code></td>
+      </tr>
+      <tr>
+        <td><strong>OR</strong></td>
+        <td>Al menos una condición debe cumplirse.</td>
+        <td><code>SELECT * FROM alumnos WHERE ciudad = 'Toluca' OR ciudad = 'Puebla';</code></td>
+      </tr>
+      <tr>
+        <td><strong>NOT</strong></td>
+        <td>Niega una condición.</td>
+        <td><code>SELECT * FROM alumnos WHERE NOT municipio = 'Tecamac';</code></td>
+      </tr>
+    </table>
+
+    <h2>🔍 Operadores especiales</h2>
+    <table class="tabla-info">
+      <tr>
+        <th>Operador</th>
+        <th>Descripción</th>
+        <th>Ejemplo</th>
+      </tr>
+      <tr>
+        <td><strong>BETWEEN</strong></td>
+        <td>Selecciona valores dentro de un rango.</td>
+        <td><code>SELECT nombre, promedio FROM alumnos WHERE promedio BETWEEN 8 AND 9;</code></td>
+      </tr>
+      <tr>
+        <td><strong>LIKE</strong></td>
+        <td>Busca patrones de texto específicos.</td>
+        <td><code>SELECT nombre FROM alumnos WHERE nombre LIKE 'A%';</code></td>
+      </tr>
+      <tr>
+        <td><strong>IN</strong></td>
+        <td>Busca coincidencias dentro de una lista de valores.</td>
+        <td><code>SELECT nombre FROM alumnos WHERE municipio IN ('Toluca','Pachuca');</code></td>
+      </tr>
+      <tr>
+        <td><strong>IS NULL / IS NOT NULL</strong></td>
+        <td>Evalúa si un campo está vacío o contiene datos.</td>
+        <td><code>SELECT nombre FROM alumnos WHERE email IS NOT NULL;</code></td>
+      </tr>
+    </table>
+
+    <h2>🧩 Ejemplo práctico en MySQL</h2>
+    <p>En este ejemplo se muestran consultas con los operadores <strong>BETWEEN</strong>, <strong>LIKE</strong>, <strong>IN</strong> y <strong>NOT</strong>:</p>
+    <img src="k.png" alt="Ejemplo de operadores en MySQL" class="infografia">
+
+    <h2>📊 Infografía general</h2>
+    <img src="f.png" alt="Infografía sobre operadores lógicos y especiales" class="infografia">
+
+    <h2>💡 Recomendaciones</h2>
+    <ul>
+      <li>Combina operadores para crear filtros más precisos.</li>
+      <li>Usa <strong>LIKE</strong> con comodines (%) para buscar coincidencias parciales.</li>
+      <li>Aplica <strong>BETWEEN</strong> para rangos numéricos o de fechas.</li>
+      <li>Evita usar <strong>NOT</strong> en exceso, puede complicar la lectura de la consulta.</li>
+      <li>Verifica los resultados con <strong>SELECT</strong> antes de aplicar cambios.</li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

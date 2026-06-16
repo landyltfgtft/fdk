@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Consultas SELECT FROM</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones</a></li>
+      <li><a href="insertar.html">Insertar registros</a></li>
+      <li><a href="eliminar.html">Eliminar registros</a></li>
+      <li><a href="actualizar.html">Actualizar registros</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>🔍 Consultas con SELECT FROM</h1>
+    <p class="intro">
+      El comando <strong>SELECT FROM</strong> se utiliza para consultar y visualizar datos almacenados en una tabla.  
+      Permite aplicar filtros, condiciones y seleccionar columnas específicas según lo que se necesite analizar.
+    </p>
+
+    <h2>📋 Sintaxis básica</h2>
+    <pre><code>SELECT columnas FROM nombre_tabla WHERE condición;</code></pre>
+    <p>Si se omite la cláusula <strong>WHERE</strong>, se mostrarán todos los registros de la tabla.</p>
+
+    <h2>📘 Ejemplo 1: Filtrar por promedio</h2>
+    <p>Consulta los alumnos con promedio igual a 10.00 y muestra su nombre y correo.</p>
+    <pre><code>SELECT nombre, apellidopaterno, apellidomaterno, email  
+FROM alumnos  
+WHERE promedio = 10.00;</code></pre>
+    <img src="j1.png" alt="Consulta por promedio" class="infografia">
+
+    <h2>📗 Ejemplo 2: Filtrar por género y estatura</h2>
+    <p>Consulta las alumnas con estatura menor a 1.60 metros.</p>
+    <pre><code>SELECT nombre, apellidopaterno, estatura  
+FROM alumnos  
+WHERE genero = 'Femenino' AND estatura < 1.60;</code></pre>
+    <img src="j2.png" alt="Consulta por género y estatura" class="infografia">
+
+    <h2>📙 Ejemplo 3: Filtrar por municipio</h2>
+    <p>Consulta los alumnos del municipio de Tecámac y muestra su promedio y tipo de música favorita.</p>
+    <pre><code>SELECT nombre, promedio, musica  
+FROM alumnos  
+WHERE municipio = 'Tecamac';</code></pre>
+    <img src="j3.png" alt="Consulta por municipio" class="infografia">
+
+    <h2>💡 Recomendaciones</h2>
+    <ul>
+      <li>Usa <strong>WHERE</strong> para aplicar condiciones específicas.</li>
+      <li>Combina operadores lógicos como <strong>AND</strong> y <strong>OR</strong> para filtrar mejor los resultados.</li>
+      <li>Utiliza <strong>ORDER BY</strong> para ordenar los resultados por una columna.</li>
+      <li>Aplica <strong>LIMIT</strong> para mostrar solo una cantidad determinada de registros.</li>
+      <li>Verifica siempre los nombres exactos de las columnas antes de ejecutar la consulta.</li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

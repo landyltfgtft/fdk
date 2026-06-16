@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modificar y Eliminar Tablas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones</a></li>
+      <li onclick="mostrarAlerta('Foreign key')">Foreign key</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Modificar y Eliminar Tablas</h1>
+    <p class="intro">
+      En SQL, los comandos <strong>ALTER TABLE</strong> y <strong>DROP TABLE</strong> permiten modificar la estructura de las tablas existentes o eliminarlas completamente.
+      Son herramientas poderosas que deben usarse con precaución, ya que pueden afectar los datos almacenados.
+    </p>
+
+    <h2>Tipos de ALTER TABLE</h2>
+    <table class="tabla-info">
+      <tr>
+        <th>Comando</th>
+        <th>Descripción</th>
+        <th>Ejemplo</th>
+      </tr>
+      <tr>
+        <td><strong>RENAME</strong></td>
+        <td>Cambia el nombre de una tabla.</td>
+        <td><code>ALTER TABLE alumnos RENAME TO estudiantes;</code></td>
+      </tr>
+      <tr>
+        <td><strong>ADD COLUMN</strong></td>
+        <td>Agrega una nueva columna a la tabla.</td>
+        <td><code>ALTER TABLE alumnos ADD edad INT;</code></td>
+      </tr>
+      <tr>
+        <td><strong>DROP COLUMN</strong></td>
+        <td>Elimina una columna existente.</td>
+        <td><code>ALTER TABLE alumnos DROP COLUMN telefono;</code></td>
+      </tr>
+      <tr>
+        <td><strong>RENAME COLUMN</strong></td>
+        <td>Cambia el nombre de una columna.</td>
+        <td><code>ALTER TABLE alumnos RENAME COLUMN nombre TO nombre_completo;</code></td>
+      </tr>
+      <tr>
+        <td><strong>MODIFY COLUMN</strong></td>
+        <td>Modifica el tipo de dato o propiedades de una columna.</td>
+        <td><code>ALTER TABLE alumnos MODIFY edad SMALLINT;</code></td>
+      </tr>
+      <tr>
+        <td><strong>ADD CONSTRAINT</strong></td>
+        <td>Agrega una restricción como PRIMARY KEY o FOREIGN KEY.</td>
+        <td><code>ALTER TABLE alumnos ADD CONSTRAINT pk_alumno PRIMARY KEY(id);</code></td>
+      </tr>
+    </table>
+
+    <h2>DROP TABLE</h2>
+    <p>
+      El comando <strong>DROP TABLE</strong> se utiliza para eliminar una tabla y todos sus datos.  
+      Una vez ejecutado, la información no puede recuperarse fácilmente.
+    </p>
+    <p><code>DROP TABLE alumnos;</code></p>
+
+    <h2>Recomendaciones</h2>
+    <ul>
+      <li>Haz una copia de seguridad antes de eliminar o modificar tablas.</li>
+      <li>Verifica las relaciones con otras tablas antes de usar <strong>DROP</strong>.</li>
+      <li>Usa <strong>ALTER</strong> para ajustes estructurales sin perder datos.</li>
+      <li>Evita modificar columnas que sean claves primarias o foráneas sin revisar dependencias.</li>
+    </ul>
+
+    <img src="drop.png" alt="Tipos de alter table" class="infografia">
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Actualizar Registros</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones</a></li>
+      <li><a href="insertar.html">Insertar registros</a></li>
+      <li><a href="eliminar.html">Eliminar registros</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>🔄 Actualizar Registros en MySQL</h1>
+    <p class="intro">
+      El comando <strong>UPDATE</strong> se utiliza para modificar los valores de uno o más campos en una tabla existente.  
+      Es fundamental usar la cláusula <strong>WHERE</strong> para evitar actualizar todos los registros por error.
+    </p>
+
+    <h2>📋 Sintaxis básica</h2>
+    <pre><code>UPDATE nombre_tabla SET columna = valor WHERE condición;</code></pre>
+    <p>Si se omite la cláusula <strong>WHERE</strong>, todos los registros de la tabla serán modificados.</p>
+
+    <h2>⚙️ Ejemplos prácticos</h2>
+    <table class="tabla-info">
+      <tr>
+        <th>Tipo de actualización</th>
+        <th>Comando</th>
+        <th>Resultado</th>
+      </tr>
+      <tr>
+        <td>Actualizar un campo</td>
+        <td><code>UPDATE productos SET precio_producto = 750.00 WHERE nombre_producto = 'laptop';</code></td>
+        <td>Cambia el precio del producto “laptop”.</td>
+      </tr>
+      <tr>
+        <td>Actualizar con operaciones</td>
+        <td><code>UPDATE productos SET stock = stock + 10 WHERE nombre_producto = 'tablet';</code></td>
+        <td>Incrementa el stock de “tablet” en 10 unidades.</td>
+      </tr>
+      <tr>
+        <td>Actualizar múltiples columnas</td>
+        <td><code>UPDATE productos SET precio_compra = 280.00, precio_producto = 400.00 WHERE nombre_producto = 'smartphone';</code></td>
+        <td>Modifica precio de compra y venta del “smartphone”.</td>
+      </tr>
+      <tr>
+        <td>Actualizar por ID</td>
+        <td><code>UPDATE productos SET stock = 20 WHERE id = 4;</code></td>
+        <td>Actualiza el stock del producto con ID 4.</td>
+      </tr>
+      <tr>
+        <td>Actualizar con condición lógica</td>
+        <td><code>UPDATE productos SET precio_producto = precio_producto * 0.9 WHERE stock > 30;</code></td>
+        <td>Aplica un descuento del 10% a productos con más de 30 unidades.</td>
+      </tr>
+    </table>
+
+    <h2>🧩 Ejemplo práctico en MySQL</h2>
+    <p>En este ejemplo se muestran cinco consultas <strong>UPDATE</strong> diferentes aplicadas a una tabla llamada <strong>productos</strong>:</p>
+    <img src="actualizar.png" alt="Ejemplo de actualización en MySQL" class="infografia">
+
+    <h2>📊 Infografía general</h2>
+    <img src="b.png" alt="Infografía sobre el comando UPDATE en MySQL" class="infografia">
+
+    <h2>💡 Recomendaciones</h2>
+    <ul>
+      <li>Usa siempre la cláusula <strong>WHERE</strong> para evitar modificar todos los registros.</li>
+      <li>Verifica los tipos de datos antes de actualizar (VARCHAR, INT, DECIMAL, DATE).</li>
+      <li>Para actualizar varios campos, separa cada par columna‑valor con comas.</li>
+      <li>Haz una copia de seguridad antes de realizar cambios masivos.</li>
+      <li>Utiliza <strong>SELECT</strong> para revisar los datos antes y después de la actualización.</li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

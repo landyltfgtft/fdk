@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eliminar Registros</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones</a></li>
+      <li><a href="insertar.html">Insertar registros</a></li>
+      <li><a href="foreignkey.html">Foreign key</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>🗑️ Eliminar Registros en MySQL</h1>
+    <p class="intro">
+      El comando <strong>DELETE</strong> se utiliza para eliminar uno o más registros (filas) de una tabla según una condición.  
+      Es importante verificar los datos antes de eliminar para evitar pérdidas accidentales.
+    </p>
+
+    <h2>📋 Sintaxis básica</h2>
+    <pre><code>DELETE FROM nombre_tabla WHERE condición;</code></pre>
+    <p>Si no se especifica una condición, se eliminarán todos los registros de la tabla.</p>
+
+    <h2>📘 Ejemplos comunes</h2>
+    <table class="tabla-info">
+      <tr>
+        <th>Tipo de eliminación</th>
+        <th>Comando</th>
+        <th>Resultado</th>
+      </tr>
+      <tr>
+        <td>Eliminar por ID</td>
+        <td><code>DELETE FROM usuarios WHERE id = 4;</code></td>
+        <td>Elimina el registro con ID 4.</td>
+      </tr>
+      <tr>
+        <td>Eliminar por nombre</td>
+        <td><code>DELETE FROM usuarios WHERE nombre = 'Carlos';</code></td>
+        <td>Elimina el registro de Carlos.</td>
+      </tr>
+      <tr>
+        <td>Eliminar varios registros</td>
+        <td><code>DELETE FROM usuarios WHERE edad >= 22;</code></td>
+        <td>Elimina todos los usuarios mayores o iguales a 22 años.</td>
+      </tr>
+      <tr>
+        <td>Eliminar todos los registros</td>
+        <td><code>DELETE FROM usuarios;</code></td>
+        <td>Vacía la tabla pero la estructura permanece.</td>
+      </tr>
+      <tr>
+        <td>Eliminar con varias condiciones</td>
+        <td><code>DELETE FROM usuarios WHERE ciudad = 'Puebla' AND edad = 30;</code></td>
+        <td>Elimina registros que cumplan ambas condiciones.</td>
+      </tr>
+      <tr>
+        <td>Eliminar con IN</td>
+        <td><code>DELETE FROM usuarios WHERE id IN (2, 5, 8);</code></td>
+        <td>Elimina los registros con los ID especificados.</td>
+      </tr>
+    </table>
+
+    <h2>🧩 Ejemplo práctico en MySQL</h2>
+    <p>En este ejemplo se muestran diferentes formas de eliminar registros en una tabla llamada <strong>clientes</strong>:</p>
+    <img src="eliminar.png" alt="Ejemplo de eliminación en MySQL" class="infografia">
+
+    <h2>📊 Infografía general</h2>
+    <img src="d.png" alt="Infografía eliminar registros en MySQL" class="infografia">
+
+    <h2>💡 Recomendaciones</h2>
+    <ul>
+      <li>Usa <strong>SELECT</strong> antes de eliminar para verificar los datos afectados.</li>
+      <li>Evita usar <strong>DELETE</strong> sin condición si no deseas vaciar toda la tabla.</li>
+      <li>Haz copias de seguridad antes de eliminar información importante.</li>
+      <li>Si necesitas eliminar toda la tabla, usa <strong>DROP TABLE</strong> en lugar de DELETE.</li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

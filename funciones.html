@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Funciones Numéricas en SQL</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones</a></li>
+      <li><a href="insertar.html">Insertar registros</a></li>
+      <li><a href="eliminar.html">Eliminar registros</a></li>
+      <li><a href="actualizar.html">Actualizar registros</a></li>
+      <li><a href="select.html">Select from</a></li>
+      <li><a href="operadores.html">Operadores</a></li>
+      <li><a href="orderby.html">Order by</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Funciones Numéricas en SQL</h1>
+    <p class="intro">
+      Las funciones numéricas permiten realizar cálculos, análisis y transformaciones sobre datos numéricos.  
+      Se dividen en tres grandes grupos: <strong>Agregadas</strong>, <strong>Escalares</strong> y <strong>Matemáticas Especiales</strong>.
+    </p>
+
+    <h2>Funciones Agregadas</h2>
+    <p>Operan sobre un conjunto de filas y devuelven un solo valor. Son ideales para obtener resúmenes o estadísticas.</p>
+    <table class="tabla-info">
+      <tr>
+        <th>Función</th>
+        <th>Concepto</th>
+        <th>Ejemplo SQL</th>
+        <th>Resultado</th>
+      </tr>
+      <tr>
+        <td><strong>SUM()</strong></td>
+        <td>Suma todos los valores de una columna.</td>
+        <td><code>SELECT SUM(precio) FROM productos;</code></td>
+        <td>Suma total del costo de los productos.</td>
+      </tr>
+      <tr>
+        <td><strong>AVG()</strong></td>
+        <td>Calcula el promedio aritmético.</td>
+        <td><code>SELECT AVG(precio) FROM productos;</code></td>
+        <td>Precio promedio de los productos.</td>
+      </tr>
+      <tr>
+        <td><strong>COUNT()</strong></td>
+        <td>Cuenta la cantidad de registros.</td>
+        <td><code>SELECT COUNT(*) FROM productos;</code></td>
+        <td>Total de productos registrados.</td>
+      </tr>
+      <tr>
+        <td><strong>MAX()</strong></td>
+        <td>Encuentra el valor más alto.</td>
+        <td><code>SELECT MAX(precio) FROM productos;</code></td>
+        <td>Precio del producto más caro.</td>
+      </tr>
+      <tr>
+        <td><strong>MIN()</strong></td>
+        <td>Encuentra el valor más bajo.</td>
+        <td><code>SELECT MIN(precio) FROM productos;</code></td>
+        <td>Precio del producto más barato.</td>
+      </tr>
+    </table>
+    <img src="ii.png" alt="Infografía funciones agregadas en SQL" class="infografia">
+
+    <h2>Funciones Escalares</h2>
+    <p>Se aplican individualmente a cada fila y devuelven un valor por registro.</p>
+    <table class="tabla-info">
+      <tr>
+        <th>Función</th>
+        <th>Concepto</th>
+        <th>Ejemplo SQL</th>
+        <th>Resultado</th>
+      </tr>
+      <tr>
+        <td><strong>ABS()</strong></td>
+        <td>Devuelve el valor absoluto.</td>
+        <td><code>SELECT ABS(precio) FROM productos;</code></td>
+        <td>Convierte -2.50 en 2.50.</td>
+      </tr>
+      <tr>
+        <td><strong>ROUND()</strong></td>
+        <td>Redondea un número a los decimales indicados.</td>
+        <td><code>SELECT ROUND(precio, 2) FROM productos;</code></td>
+        <td>Convierte 2.3456 en 2.35.</td>
+      </tr>
+      <tr>
+        <td><strong>CEILING()</strong></td>
+        <td>Redondea hacia arriba al entero más cercano.</td>
+        <td><code>SELECT CEILING(precio) FROM productos;</code></td>
+        <td>Convierte 2.20 en 3.</td>
+      </tr>
+      <tr>
+        <td><strong>FLOOR()</strong></td>
+        <td>Redondea hacia abajo al entero más cercano.</td>
+        <td><code>SELECT FLOOR(precio) FROM productos;</code></td>
+        <td>Convierte 2.80 en 2.</td>
+      </tr>
+      <tr>
+        <td><strong>TRUNCATE()</strong></td>
+        <td>Corta los decimales sin redondear.</td>
+        <td><code>SELECT TRUNCATE(precio, 1) FROM productos;</code></td>
+        <td>Convierte 2.89 en 2.8.</td>
+      </tr>
+      <tr>
+        <td><strong>SIGN()</strong></td>
+        <td>Indica si el valor es positivo (1), negativo (-1) o cero (0).</td>
+        <td><code>SELECT SIGN(stock) FROM productos;</code></td>
+        <td>10 → 1, -5 → -1, 0 → 0.</td>
+      </tr>
+    </table>
+    <img src="t.png" alt="Infografía funciones escalares en SQL" class="infografia">
+
+    <h2>🧠 Funciones Matemáticas Especiales</h2>
+    <p>Permiten realizar cálculos más avanzados, como potencias, raíces o logaritmos.</p>
+    <pre><code>SELECT POWER(precio, 2) AS cuadrado FROM productos;</code></pre>
+    <p>Este ejemplo eleva al cuadrado el valor del precio de cada producto.</p>
+    <img src="w.png" alt="Ejemplo de función POWER en MySQL" class="infografia">
+
+    <h2>Recomendaciones</h2>
+    <ul>
+      <li>Usa funciones agregadas para obtener resúmenes globales.</li>
+      <li>Aplica funciones escalares para transformar valores individuales.</li>
+      <li>Combina funciones matemáticas para análisis más complejos.</li>
+      <li>Verifica los tipos de datos antes de aplicar funciones numéricas.</li>
+      <li>Utiliza alias (<strong>AS</strong>) para nombrar columnas calculadas.</li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

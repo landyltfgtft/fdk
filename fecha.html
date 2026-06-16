@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Funciones de Fecha y Hora en SQL</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="index.html">Volver al inicio</a></li>
+      <li><a href="conceptos.html">Conceptos básicos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones</a></li>
+      <li><a href="insertar.html">Insertar registros</a></li>
+      <li><a href="eliminar.html">Eliminar registros</a></li>
+      <li><a href="actualizar.html">Actualizar registros</a></li>
+      <li><a href="select.html">Select from</a></li>
+      <li><a href="operadores.html">Operadores</a></li>
+      <li><a href="orderby.html">Order by</a></li>
+      <li><a href="funciones.html">Funciones numéricas</a></li>
+      <li><a href="texto.html">Funciones de texto</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>🕒 Funciones de Fecha y Hora en SQL</h1>
+    <p class="intro">
+      Las funciones de fecha y hora permiten obtener, comparar y calcular valores temporales dentro de una base de datos.  
+      Son muy útiles para registrar eventos, calcular antigüedad o mostrar la fecha y hora actual del sistema.
+    </p>
+
+    <h2>📋 Principales funciones</h2>
+    <table class="tabla-info">
+      <tr>
+        <th>Función</th>
+        <th>Descripción</th>
+        <th>Ejemplo SQL</th>
+        <th>Resultado</th>
+      </tr>
+      <tr>
+        <td><strong>CURDATE()</strong></td>
+        <td>Devuelve la fecha actual del sistema.</td>
+        <td><code>SELECT CURDATE() AS fecha_actual;</code></td>
+        <td>2026‑06‑15</td>
+      </tr>
+      <tr>
+        <td><strong>CURTIME()</strong></td>
+        <td>Devuelve la hora actual del sistema.</td>
+        <td><code>SELECT CURTIME() AS hora_actual;</code></td>
+        <td>21:30:35</td>
+      </tr>
+      <tr>
+        <td><strong>NOW()</strong></td>
+        <td>Devuelve la fecha y hora actual combinadas.</td>
+        <td><code>SELECT NOW() AS fecha_hora_actual;</code></td>
+        <td>2026‑06‑15 21:30:35</td>
+      </tr>
+      <tr>
+        <td><strong>YEAR(), MONTH(), DAY()</strong></td>
+        <td>Extraen el año, mes o día de una fecha.</td>
+        <td><code>SELECT YEAR(CURDATE()), MONTH(CURDATE()), DAY(CURDATE());</code></td>
+        <td>2026 | 06 | 15</td>
+      </tr>
+      <tr>
+        <td><strong>DATEDIFF()</strong></td>
+        <td>Calcula la diferencia en días entre dos fechas.</td>
+        <td><code>SELECT DATEDIFF(CURDATE(), '2009‑03‑02') AS dias_transcurridos;</code></td>
+        <td>6314</td>
+      </tr>
+    </table>
+
+    <h2>🧩 Ejemplo práctico en MySQL</h2>
+    <p>En este ejemplo se muestran consultas para obtener la fecha, hora, fecha‑hora actual y calcular diferencias entre fechas:</p>
+    <img src="ff.png" alt="Ejemplo de funciones de fecha y hora en MySQL" class="infografia">
+
+    <h2>💡 Recomendaciones</h2>
+    <ul>
+      <li>Usa <strong>CURDATE()</strong> y <strong>CURTIME()</strong> para registrar la fecha y hora de creación de registros.</li>
+      <li>Combina <strong>NOW()</strong> con <strong>ORDER BY</strong> para ordenar eventos cronológicamente.</li>
+      <li>Aplica <strong>DATEDIFF()</strong> para calcular antigüedad o días transcurridos entre fechas.</li>
+      <li>Extrae partes específicas de la fecha con <strong>YEAR()</strong>, <strong>MONTH()</strong> y <strong>DAY()</strong>.</li>
+      <li>Verifica el formato de fecha (YYYY‑MM‑DD) antes de realizar cálculos.</li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

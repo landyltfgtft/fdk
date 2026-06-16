@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página de Inicio SQL</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    
+    <h2>🌸 Menú SQL</h2>
+    <ul>
+      <li><a href="conceptos.html">Introducción a base de datos</a></li>
+      <li><a href="diseño.html">Diseño de base de datos</a></li>
+      <li><a href="restricciones.html">Restricciones en SQL</a></li>
+        <li><a href="modificar.html">Modificar y eliminar tablas</a></li>
+      <li><a href="insertar.html">Insertar registros</a></li>
+      <li><a href="foreignkey.html">Foreign key</a></li>
+      <li><a href="eliminar.html">Eliminar registros</a></li>
+      <li><a href="actualizar.html">Actualizar registros</a></li>
+      <li><a href="select.html">Select from</a></li>
+      <li><a href="operadores.html">Operadores</a></li>
+      <li><a href="orderby.html">Order by</a></li>
+      <li><a href="funciones.html">Funciones numéricas</a></li>
+      <li><a href="texto.html">Funciones de texto</a></li>
+      <li><a href="fecha.html">Funciones de fecha y hora</a></li>
+    </ul>
+  </div>
+  
+  <div class="content">
+    <h1>Bienvenido</h1>
+    <p>Selecciona un tema del menú para explorar SQL.</p>
+    <img src="gato.png" alt="sql" class="logo">
+  </div>
+ 
+  <script>
+    function mostrarAlerta(item) {
+      Swal.fire({
+        title: 'Tema seleccionado',
+        text: 'Has elegido: ' + item,
+        icon: 'info',
+        confirmButtonColor: '#ff3d7e',
+        confirmButtonText: 'Ir al tema'
+      });
+    }
+  </script>
+</body>
+</html>
